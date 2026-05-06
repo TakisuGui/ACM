@@ -13,6 +13,11 @@ ll gcd(ll a,ll b)
     else return gcd(b,a%b);
 }
 
+ll lcm(ll a,ll b)
+{
+    return a*b*gcd(a,b);
+}
+
 int main()
 {
     ios::sync_with_stdio(false);

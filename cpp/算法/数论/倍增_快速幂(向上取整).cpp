@@ -24,3 +24,5 @@ int main()
     printf("%lld^%lld mod %lld=%lld",a,b,c,qpow(a,b,c));
 
 }
+
+//ceil(a/b)=floor((a+b-1)/b);
