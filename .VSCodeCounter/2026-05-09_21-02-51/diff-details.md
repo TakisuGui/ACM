@@ -1,12 +1,12 @@
-# Details
+# Diff Details
 
-Date : 2026-05-02 22:26:50
+Date : 2026-05-09 21:02:51
 
 Directory c:\\cpp\\cpp
 
-Total : 402 files,  16239 codes, 264 comments, 4237 blanks, all 20740 lines
+Total : 440 files,  17950 codes, 269 comments, 4692 blanks, all 22911 lines
 
-[Summary](results.md) / Details / [Diff Summary](diff.md) / [Diff Details](diff-details.md)
+[Summary](results.md) / [Details](details.md) / [Diff Summary](diff.md) / Diff Details
 
 ## Files
 | filename | language | code | comment | blank | total |
@@ -69,6 +69,9 @@ Total : 402 files,  16239 codes, 264 comments, 4237 blanks, all 20740 lines
 | [cpp/abc/456\_C\_ Not Adjacent.cpp](/cpp/abc/456_C_%20Not%20Adjacent.cpp) | C++ | 32 | 0 | 9 | 41 |
 | [cpp/abc/456\_D\_ Not Adjacent 2.cpp](/cpp/abc/456_D_%20Not%20Adjacent%202.cpp) | C++ | 30 | 0 | 7 | 37 |
 | [cpp/abc/456\_E\_ Endless Holidays.cpp](/cpp/abc/456_E_%20Endless%20Holidays.cpp) | C++ | 60 | 0 | 16 | 76 |
+| [cpp/abc/457\_A\_Array.cpp](/cpp/abc/457_A_Array.cpp) | C++ | 12 | 0 | 3 | 15 |
+| [cpp/abc/457\_B\_ Arrays.cpp](/cpp/abc/457_B_%20Arrays.cpp) | C++ | 17 | 0 | 5 | 22 |
+| [cpp/abc/457\_C\_ Long Sequence .cpp](/cpp/abc/457_C_%20Long%20Sequence%20.cpp) | C++ | 46 | 0 | 12 | 58 |
 | [cpp/杭电周赛/0001\_最大的公约数.cpp](/cpp/%E6%9D%AD%E7%94%B5%E5%91%A8%E8%B5%9B/0001_%E6%9C%80%E5%A4%A7%E7%9A%84%E5%85%AC%E7%BA%A6%E6%95%B0.cpp) | C++ | 41 | 0 | 8 | 49 |
 | [cpp/杭电周赛/0002\_雪蜜冰城柠檬茶的神秘成分魔法.cpp](/cpp/%E6%9D%AD%E7%94%B5%E5%91%A8%E8%B5%9B/0002_%E9%9B%AA%E8%9C%9C%E5%86%B0%E5%9F%8E%E6%9F%A0%E6%AA%AC%E8%8C%B6%E7%9A%84%E7%A5%9E%E7%A7%98%E6%88%90%E5%88%86%E9%AD%94%E6%B3%95.cpp) | C++ | 77 | 0 | 10 | 87 |
 | [cpp/杭电周赛/0003\_杂草蔓延.cpp](/cpp/%E6%9D%AD%E7%94%B5%E5%91%A8%E8%B5%9B/0003_%E6%9D%82%E8%8D%89%E8%94%93%E5%BB%B6.cpp) | C++ | 22 | 0 | 3 | 25 |
@@ -96,6 +99,9 @@ Total : 402 files,  16239 codes, 264 comments, 4237 blanks, all 20740 lines
 | [cpp/杭电周赛/6003\_绩点查询.cpp](/cpp/%E6%9D%AD%E7%94%B5%E5%91%A8%E8%B5%9B/6003_%E7%BB%A9%E7%82%B9%E6%9F%A5%E8%AF%A2.cpp) | C++ | 27 | 0 | 10 | 37 |
 | [cpp/杭电周赛/6005\_向量压缩.cpp](/cpp/%E6%9D%AD%E7%94%B5%E5%91%A8%E8%B5%9B/6005_%E5%90%91%E9%87%8F%E5%8E%8B%E7%BC%A9.cpp) | C++ | 37 | 0 | 11 | 48 |
 | [cpp/杭电周赛/6007\_不开心世纪.cpp](/cpp/%E6%9D%AD%E7%94%B5%E5%91%A8%E8%B5%9B/6007_%E4%B8%8D%E5%BC%80%E5%BF%83%E4%B8%96%E7%BA%AA.cpp) | C++ | 46 | 0 | 12 | 58 |
+| [cpp/杭电周赛/7002\_Bingo.cpp](/cpp/%E6%9D%AD%E7%94%B5%E5%91%A8%E8%B5%9B/7002_Bingo.cpp) | C++ | 58 | 0 | 11 | 69 |
+| [cpp/杭电周赛/7007\_Bridge.cpp](/cpp/%E6%9D%AD%E7%94%B5%E5%91%A8%E8%B5%9B/7007_Bridge.cpp) | C++ | 77 | 0 | 16 | 93 |
+| [cpp/杭电周赛/7008\_Horse Racing.cpp](/cpp/%E6%9D%AD%E7%94%B5%E5%91%A8%E8%B5%9B/7008_Horse%20Racing.cpp) | C++ | 55 | 0 | 15 | 70 |
 | [cpp/洛谷刷题训练/1.1\_金币.cpp](/cpp/%E6%B4%9B%E8%B0%B7%E5%88%B7%E9%A2%98%E8%AE%AD%E7%BB%83/1.1_%E9%87%91%E5%B8%81.cpp) | C++ | 24 | 0 | 7 | 31 |
 | [cpp/洛谷刷题训练/1.2\_接水问题.cpp](/cpp/%E6%B4%9B%E8%B0%B7%E5%88%B7%E9%A2%98%E8%AE%AD%E7%BB%83/1.2_%E6%8E%A5%E6%B0%B4%E9%97%AE%E9%A2%98.cpp) | C++ | 22 | 0 | 9 | 31 |
 | [cpp/洛谷刷题训练/1.3\_最接近神的人.cpp](/cpp/%E6%B4%9B%E8%B0%B7%E5%88%B7%E9%A2%98%E8%AE%AD%E7%BB%83/1.3_%E6%9C%80%E6%8E%A5%E8%BF%91%E7%A5%9E%E7%9A%84%E4%BA%BA.cpp) | C++ | 41 | 0 | 12 | 53 |
@@ -180,6 +186,12 @@ Total : 402 files,  16239 codes, 264 comments, 4237 blanks, all 20740 lines
 | [cpp/牛客周赛/Round141\_D\_未知(version 2).java](/cpp/%E7%89%9B%E5%AE%A2%E5%91%A8%E8%B5%9B/Round141_D_%E6%9C%AA%E7%9F%A5(version%202).java) | Java | 55 | 0 | 17 | 72 |
 | [cpp/牛客周赛/Round141\_E\_未知(version 3).cpp](/cpp/%E7%89%9B%E5%AE%A2%E5%91%A8%E8%B5%9B/Round141_E_%E6%9C%AA%E7%9F%A5(version%203).cpp) | C++ | 49 | 0 | 17 | 66 |
 | [cpp/牛客周赛/Round141\_F\_回文(version 3).cpp](/cpp/%E7%89%9B%E5%AE%A2%E5%91%A8%E8%B5%9B/Round141_F_%E5%9B%9E%E6%96%87(version%203).cpp) | C++ | 61 | 0 | 11 | 72 |
+| [cpp/牛客周赛/Round142\_A\_小苯的ovo3.0.cpp](/cpp/%E7%89%9B%E5%AE%A2%E5%91%A8%E8%B5%9B/Round142_A_%E5%B0%8F%E8%8B%AF%E7%9A%84ovo3.0.cpp) | C++ | 25 | 0 | 9 | 34 |
+| [cpp/牛客周赛/Round142\_B\_小苯的双端队列.cpp](/cpp/%E7%89%9B%E5%AE%A2%E5%91%A8%E8%B5%9B/Round142_B_%E5%B0%8F%E8%8B%AF%E7%9A%84%E5%8F%8C%E7%AB%AF%E9%98%9F%E5%88%97.cpp) | C++ | 39 | 0 | 10 | 49 |
+| [cpp/牛客周赛/Round142\_C\_小苯的整除序列.cpp](/cpp/%E7%89%9B%E5%AE%A2%E5%91%A8%E8%B5%9B/Round142_C_%E5%B0%8F%E8%8B%AF%E7%9A%84%E6%95%B4%E9%99%A4%E5%BA%8F%E5%88%97.cpp) | C++ | 33 | 0 | 9 | 42 |
+| [cpp/牛客周赛/Round142\_D\_小苯的幼儿园.cpp](/cpp/%E7%89%9B%E5%AE%A2%E5%91%A8%E8%B5%9B/Round142_D_%E5%B0%8F%E8%8B%AF%E7%9A%84%E5%B9%BC%E5%84%BF%E5%9B%AD.cpp) | C++ | 45 | 0 | 12 | 57 |
+| [cpp/牛客周赛/Round142\_E\_小苯的区间操作.cpp](/cpp/%E7%89%9B%E5%AE%A2%E5%91%A8%E8%B5%9B/Round142_E_%E5%B0%8F%E8%8B%AF%E7%9A%84%E5%8C%BA%E9%97%B4%E6%93%8D%E4%BD%9C.cpp) | C++ | 32 | 0 | 11 | 43 |
+| [cpp/牛客周赛/Round142\_F\_小苯的DFS.cpp](/cpp/%E7%89%9B%E5%AE%A2%E5%91%A8%E8%B5%9B/Round142_F_%E5%B0%8F%E8%8B%AF%E7%9A%84DFS.cpp) | C++ | 107 | 1 | 22 | 130 |
 | [cpp/牛客寒假训练赛/牛客竞赛1\_B\_Card Game.cpp](/cpp/%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%87%E8%AE%AD%E7%BB%83%E8%B5%9B/%E7%89%9B%E5%AE%A2%E7%AB%9E%E8%B5%9B1_B_Card%20Game.cpp) | C++ | 41 | 0 | 11 | 52 |
 | [cpp/牛客寒假训练赛/牛客竞赛1\_C\_Array Covering.cpp](/cpp/%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%87%E8%AE%AD%E7%BB%83%E8%B5%9B/%E7%89%9B%E5%AE%A2%E7%AB%9E%E8%B5%9B1_C_Array%20Covering.cpp) | C++ | 28 | 0 | 7 | 35 |
 | [cpp/牛客寒假训练赛/牛客竞赛1\_E\_Block Game.cpp](/cpp/%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%87%E8%AE%AD%E7%BB%83%E8%B5%9B/%E7%89%9B%E5%AE%A2%E7%AB%9E%E8%B5%9B1_E_Block%20Game.cpp) | C++ | 22 | 0 | 4 | 26 |
@@ -271,13 +283,37 @@ Total : 402 files,  16239 codes, 264 comments, 4237 blanks, all 20740 lines
 | [cpp/牛客每日一题/4.9\_绿豆蛙的归宿.cpp](/cpp/%E7%89%9B%E5%AE%A2%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/4.9_%E7%BB%BF%E8%B1%86%E8%9B%99%E7%9A%84%E5%BD%92%E5%AE%BF.cpp) | C++ | 39 | 0 | 10 | 49 |
 | [cpp/牛客每日一题/5.1\_小红关鸡.cpp](/cpp/%E7%89%9B%E5%AE%A2%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/5.1_%E5%B0%8F%E7%BA%A2%E5%85%B3%E9%B8%A1.cpp) | C++ | 32 | 0 | 12 | 44 |
 | [cpp/牛客每日一题/5.2\_剪纸游戏.cpp](/cpp/%E7%89%9B%E5%AE%A2%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/5.2_%E5%89%AA%E7%BA%B8%E6%B8%B8%E6%88%8F.cpp) | C++ | 80 | 0 | 20 | 100 |
+| [cpp/牛客每日一题/5.3\_前缀平方和序列.cpp](/cpp/%E7%89%9B%E5%AE%A2%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/5.3_%E5%89%8D%E7%BC%80%E5%B9%B3%E6%96%B9%E5%92%8C%E5%BA%8F%E5%88%97.cpp) | C++ | 35 | 0 | 11 | 46 |
+| [cpp/牛客每日一题/5.4\_操作数组.cpp](/cpp/%E7%89%9B%E5%AE%A2%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/5.4_%E6%93%8D%E4%BD%9C%E6%95%B0%E7%BB%84.cpp) | C++ | 33 | 0 | 9 | 42 |
+| [cpp/牛客每日一题/5.5\_法法.cpp](/cpp/%E7%89%9B%E5%AE%A2%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/5.5_%E6%B3%95%E6%B3%95.cpp) | C++ | 21 | 0 | 7 | 28 |
+| [cpp/牛客每日一题/5.6\_分解质因数.cpp](/cpp/%E7%89%9B%E5%AE%A2%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/5.6_%E5%88%86%E8%A7%A3%E8%B4%A8%E5%9B%A0%E6%95%B0.cpp) | C++ | 57 | 0 | 15 | 72 |
+| [cpp/牛客每日一题/5.7\_小红的矩阵染色.cpp](/cpp/%E7%89%9B%E5%AE%A2%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/5.7_%E5%B0%8F%E7%BA%A2%E7%9A%84%E7%9F%A9%E9%98%B5%E6%9F%93%E8%89%B2.cpp) | C++ | 61 | 0 | 13 | 74 |
+| [cpp/牛客每日一题/5.8\_小苯的前缀gcd构造.cpp](/cpp/%E7%89%9B%E5%AE%A2%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/5.8_%E5%B0%8F%E8%8B%AF%E7%9A%84%E5%89%8D%E7%BC%80gcd%E6%9E%84%E9%80%A0.cpp) | C++ | 73 | 0 | 16 | 89 |
+| [cpp/牛客每日一题/5.9\_拆迁入门.cpp](/cpp/%E7%89%9B%E5%AE%A2%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/5.9_%E6%8B%86%E8%BF%81%E5%85%A5%E9%97%A8.cpp) | C++ | 91 | 0 | 13 | 104 |
 | [cpp/算法/动态规划/dp\_区间dp\_切棍子的最小代价.cpp](/cpp/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/dp_%E5%8C%BA%E9%97%B4dp_%E5%88%87%E6%A3%8D%E5%AD%90%E7%9A%84%E6%9C%80%E5%B0%8F%E4%BB%A3%E4%BB%B7.cpp) | C++ | 30 | 13 | 15 | 58 |
+| [cpp/算法/动态规划/dp\_区间dp\_合唱队.cpp](/cpp/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/dp_%E5%8C%BA%E9%97%B4dp_%E5%90%88%E5%94%B1%E9%98%9F.cpp) | C++ | 45 | 0 | 12 | 57 |
+| [cpp/算法/动态规划/dp\_区间dp\_合并石头的最低成本.cpp](/cpp/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/dp_%E5%8C%BA%E9%97%B4dp_%E5%90%88%E5%B9%B6%E7%9F%B3%E5%A4%B4%E7%9A%84%E6%9C%80%E4%BD%8E%E6%88%90%E6%9C%AC.cpp) | C++ | 27 | 0 | 9 | 36 |
 | [cpp/算法/动态规划/dp\_区间dp\_回文字串.cpp](/cpp/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/dp_%E5%8C%BA%E9%97%B4dp_%E5%9B%9E%E6%96%87%E5%AD%97%E4%B8%B2.cpp) | C++ | 21 | 0 | 7 | 28 |
 | [cpp/算法/动态规划/dp\_区间dp\_多边形三角剖分的最低得分.cpp](/cpp/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/dp_%E5%8C%BA%E9%97%B4dp_%E5%A4%9A%E8%BE%B9%E5%BD%A2%E4%B8%89%E8%A7%92%E5%89%96%E5%88%86%E7%9A%84%E6%9C%80%E4%BD%8E%E5%BE%97%E5%88%86.cpp) | C++ | 21 | 0 | 4 | 25 |
+| [cpp/算法/动态规划/dp\_区间dp\_奇怪的打印机.cpp](/cpp/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/dp_%E5%8C%BA%E9%97%B4dp_%E5%A5%87%E6%80%AA%E7%9A%84%E6%89%93%E5%8D%B0%E6%9C%BA.cpp) | C++ | 30 | 0 | 7 | 37 |
 | [cpp/算法/动态规划/dp\_区间dp\_戳气球.cpp](/cpp/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/dp_%E5%8C%BA%E9%97%B4dp_%E6%88%B3%E6%B0%94%E7%90%83.cpp) | C++ | 25 | 0 | 8 | 33 |
+| [cpp/算法/动态规划/dp\_区间dp\_统计不同回文子序列.cpp](/cpp/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/dp_%E5%8C%BA%E9%97%B4dp_%E7%BB%9F%E8%AE%A1%E4%B8%8D%E5%90%8C%E5%9B%9E%E6%96%87%E5%AD%90%E5%BA%8F%E5%88%97.cpp) | C++ | 41 | 0 | 10 | 51 |
 | [cpp/算法/动态规划/dp\_区间dp\_预测赢家.cpp](/cpp/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/dp_%E5%8C%BA%E9%97%B4dp_%E9%A2%84%E6%B5%8B%E8%B5%A2%E5%AE%B6.cpp) | C++ | 27 | 0 | 8 | 35 |
+| [cpp/算法/动态规划/dp\_树型dp\_二叉搜索子树的最大键值和.cpp](/cpp/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/dp_%E6%A0%91%E5%9E%8Bdp_%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E5%AD%90%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E9%94%AE%E5%80%BC%E5%92%8C.cpp) | C++ | 39 | 0 | 15 | 54 |
+| [cpp/算法/动态规划/dp\_树型dp\_二叉树的直径.cpp](/cpp/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/dp_%E6%A0%91%E5%9E%8Bdp_%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E7%9B%B4%E5%BE%84.cpp) | C++ | 31 | 0 | 12 | 43 |
+| [cpp/算法/动态规划/dp\_树型dp\_从树中删除边的最小分数 .cpp](/cpp/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/dp_%E6%A0%91%E5%9E%8Bdp_%E4%BB%8E%E6%A0%91%E4%B8%AD%E5%88%A0%E9%99%A4%E8%BE%B9%E7%9A%84%E6%9C%80%E5%B0%8F%E5%88%86%E6%95%B0%20.cpp) | C++ | 75 | 0 | 19 | 94 |
+| [cpp/算法/动态规划/dp\_树型dp\_到达首都的最少油耗 .cpp](/cpp/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/dp_%E6%A0%91%E5%9E%8Bdp_%E5%88%B0%E8%BE%BE%E9%A6%96%E9%83%BD%E7%9A%84%E6%9C%80%E5%B0%91%E6%B2%B9%E8%80%97%20.cpp) | C++ | 39 | 0 | 12 | 51 |
+| [cpp/算法/动态规划/dp\_树型dp\_在二叉树中分配硬币.cpp](/cpp/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/dp_%E6%A0%91%E5%9E%8Bdp_%E5%9C%A8%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E5%88%86%E9%85%8D%E7%A1%AC%E5%B8%81.cpp) | C++ | 35 | 0 | 10 | 45 |
+| [cpp/算法/动态规划/dp\_树型dp\_找到二叉树中的最大搜索二叉子树.java](/cpp/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/dp_%E6%A0%91%E5%9E%8Bdp_%E6%89%BE%E5%88%B0%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E7%9A%84%E6%9C%80%E5%A4%A7%E6%90%9C%E7%B4%A2%E4%BA%8C%E5%8F%89%E5%AD%90%E6%A0%91.java) | Java | 38 | 0 | 15 | 53 |
 | [cpp/算法/动态规划/dp\_树型dp\_没有上司的舞会.cpp](/cpp/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/dp_%E6%A0%91%E5%9E%8Bdp_%E6%B2%A1%E6%9C%89%E4%B8%8A%E5%8F%B8%E7%9A%84%E8%88%9E%E4%BC%9A.cpp) | C++ | 42 | 1 | 10 | 53 |
-| [cpp/算法/动态规划/dp\_线性dp\_上台阶.cpp](/cpp/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/dp_%E7%BA%BF%E6%80%A7dp_%E4%B8%8A%E5%8F%B0%E9%98%B6.cpp) | C++ | 23 | 0 | 8 | 31 |
+| [cpp/算法/动态规划/dp\_树型dp\_监视二叉树.cpp](/cpp/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/dp_%E6%A0%91%E5%9E%8Bdp_%E7%9B%91%E8%A7%86%E4%BA%8C%E5%8F%89%E6%A0%91.cpp) | C++ | 32 | 3 | 12 | 47 |
+| [cpp/算法/动态规划/dp\_树型dp\_相邻字符不同的最长路径 .cpp](/cpp/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/dp_%E6%A0%91%E5%9E%8Bdp_%E7%9B%B8%E9%82%BB%E5%AD%97%E7%AC%A6%E4%B8%8D%E5%90%8C%E7%9A%84%E6%9C%80%E9%95%BF%E8%B7%AF%E5%BE%84%20.cpp) | C++ | 54 | 0 | 14 | 68 |
+| [cpp/算法/动态规划/dp\_树型dp\_移除子树后的二叉树高度.cpp](/cpp/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/dp_%E6%A0%91%E5%9E%8Bdp_%E7%A7%BB%E9%99%A4%E5%AD%90%E6%A0%91%E5%90%8E%E7%9A%84%E4%BA%8C%E5%8F%89%E6%A0%91%E9%AB%98%E5%BA%A6.cpp) | C++ | 60 | 0 | 14 | 74 |
+| [cpp/算法/动态规划/dp\_树型dp\_路径总和 III.cpp](/cpp/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/dp_%E6%A0%91%E5%9E%8Bdp_%E8%B7%AF%E5%BE%84%E6%80%BB%E5%92%8C%20III.cpp) | C++ | 32 | 0 | 12 | 44 |
+| [cpp/算法/动态规划/dp\_树型dp\_选课(二维优化).cpp](/cpp/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/dp_%E6%A0%91%E5%9E%8Bdp_%E9%80%89%E8%AF%BE(%E4%BA%8C%E7%BB%B4%E4%BC%98%E5%8C%96).cpp) | C++ | 66 | 0 | 14 | 80 |
+| [cpp/算法/动态规划/dp\_树型dp\_选课.cpp](/cpp/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/dp_%E6%A0%91%E5%9E%8Bdp_%E9%80%89%E8%AF%BE.cpp) | C++ | 50 | 0 | 17 | 67 |
+| [cpp/算法/动态规划/dp\_状压dp\_我能赢吗.cpp](/cpp/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/dp_%E7%8A%B6%E5%8E%8Bdp_%E6%88%91%E8%83%BD%E8%B5%A2%E5%90%97.cpp) | C++ | 28 | 0 | 7 | 35 |
+| [cpp/算法/动态规划/dp\_线性dp\_上台阶.cpp](/cpp/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/dp_%E7%BA%BF%E6%80%A7dp_%E4%B8%8A%E5%8F%B0%E9%98%B6.cpp) | C++ | 23 | 0 | 11 | 34 |
 | [cpp/算法/动态规划/dp\_线性dp\_乌龟棋.cpp](/cpp/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/dp_%E7%BA%BF%E6%80%A7dp_%E4%B9%8C%E9%BE%9F%E6%A3%8B.cpp) | C++ | 40 | 0 | 9 | 49 |
 | [cpp/算法/动态规划/dp\_线性dp\_最大字段和.cpp](/cpp/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/dp_%E7%BA%BF%E6%80%A7dp_%E6%9C%80%E5%A4%A7%E5%AD%97%E6%AE%B5%E5%92%8C.cpp) | C++ | 20 | 0 | 8 | 28 |
 | [cpp/算法/动态规划/dp\_经典线性dp\_blackbroad.cpp](/cpp/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/dp_%E7%BB%8F%E5%85%B8%E7%BA%BF%E6%80%A7dp_blackbroad.cpp) | C++ | 38 | 0 | 12 | 50 |
@@ -309,8 +345,10 @@ Total : 402 files,  16239 codes, 264 comments, 4237 blanks, all 20740 lines
 | [cpp/算法/动态规划/记忆化搜索\_多边形三角剖分的最低得分.cpp](/cpp/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2_%E5%A4%9A%E8%BE%B9%E5%BD%A2%E4%B8%89%E8%A7%92%E5%89%96%E5%88%86%E7%9A%84%E6%9C%80%E4%BD%8E%E5%BE%97%E5%88%86.cpp) | C++ | 25 | 0 | 7 | 32 |
 | [cpp/算法/动态规划/记忆化搜索\_布尔运算.cpp](/cpp/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2_%E5%B8%83%E5%B0%94%E8%BF%90%E7%AE%97.cpp) | C++ | 50 | 0 | 10 | 60 |
 | [cpp/算法/动态规划/记忆化搜索\_戳气球.cpp](/cpp/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2_%E6%88%B3%E6%B0%94%E7%90%83.cpp) | C++ | 26 | 2 | 8 | 36 |
+| [cpp/算法/动态规划/记忆化搜索\_括号区间匹配.cpp](/cpp/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2_%E6%8B%AC%E5%8F%B7%E5%8C%BA%E9%97%B4%E5%8C%B9%E9%85%8D.cpp) | C++ | 40 | 0 | 11 | 51 |
 | [cpp/算法/动态规划/记忆化搜索\_斐波那契数.cpp](/cpp/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2_%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0.cpp) | C++ | 18 | 0 | 11 | 29 |
 | [cpp/算法/动态规划/记忆化搜索\_滑雪.cpp](/cpp/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2_%E6%BB%91%E9%9B%AA.cpp) | C++ | 45 | 0 | 14 | 59 |
+| [cpp/算法/动态规划/记忆化搜索\_移除盒子.cpp](/cpp/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2_%E7%A7%BB%E9%99%A4%E7%9B%92%E5%AD%90.cpp) | C++ | 28 | 0 | 9 | 37 |
 | [cpp/算法/动态规划/记忆化搜索\_预测赢家.cpp](/cpp/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2_%E9%A2%84%E6%B5%8B%E8%B5%A2%E5%AE%B6.cpp) | C++ | 32 | 0 | 12 | 44 |
 | [cpp/算法/图论/图0\_洪水填充\_被围绕的区域.cpp](/cpp/%E7%AE%97%E6%B3%95/%E5%9B%BE%E8%AE%BA/%E5%9B%BE0_%E6%B4%AA%E6%B0%B4%E5%A1%AB%E5%85%85_%E8%A2%AB%E5%9B%B4%E7%BB%95%E7%9A%84%E5%8C%BA%E5%9F%9F.cpp) | C++ | 36 | 0 | 6 | 42 |
 | [cpp/算法/图论/图1\_并查集模板\_并查集的实现.cpp](/cpp/%E7%AE%97%E6%B3%95/%E5%9B%BE%E8%AE%BA/%E5%9B%BE1_%E5%B9%B6%E6%9F%A5%E9%9B%86%E6%A8%A1%E6%9D%BF_%E5%B9%B6%E6%9F%A5%E9%9B%86%E7%9A%84%E5%AE%9E%E7%8E%B0.cpp) | C++ | 68 | 0 | 15 | 83 |
@@ -356,11 +394,11 @@ Total : 402 files,  16239 codes, 264 comments, 4237 blanks, all 20740 lines
 | [cpp/算法/数据结构/队列\_约瑟夫\_数学.cpp](/cpp/%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%98%9F%E5%88%97_%E7%BA%A6%E7%91%9F%E5%A4%AB_%E6%95%B0%E5%AD%A6.cpp) | C++ | 28 | 0 | 5 | 33 |
 | [cpp/算法/数据结构/队列\_约瑟夫环.cpp](/cpp/%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%98%9F%E5%88%97_%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF.cpp) | C++ | 30 | 0 | 12 | 42 |
 | [cpp/算法/数论/bidtset.cpp](/cpp/%E7%AE%97%E6%B3%95/%E6%95%B0%E8%AE%BA/bidtset.cpp) | C++ | 23 | 3 | 5 | 31 |
-| [cpp/算法/数论/倍增\_快速幂.cpp](/cpp/%E7%AE%97%E6%B3%95/%E6%95%B0%E8%AE%BA/%E5%80%8D%E5%A2%9E_%E5%BF%AB%E9%80%9F%E5%B9%82.cpp) | C++ | 19 | 0 | 7 | 26 |
+| [cpp/算法/数论/倍增\_快速幂(向上取整).cpp](/cpp/%E7%AE%97%E6%B3%95/%E6%95%B0%E8%AE%BA/%E5%80%8D%E5%A2%9E_%E5%BF%AB%E9%80%9F%E5%B9%82(%E5%90%91%E4%B8%8A%E5%8F%96%E6%95%B4).cpp) | C++ | 19 | 1 | 8 | 28 |
 | [cpp/算法/数论/倍增\_阶乘\_逆元.cpp](/cpp/%E7%AE%97%E6%B3%95/%E6%95%B0%E8%AE%BA/%E5%80%8D%E5%A2%9E_%E9%98%B6%E4%B9%98_%E9%80%86%E5%85%83.cpp) | C++ | 61 | 1 | 13 | 75 |
 | [cpp/算法/数论/枚举\_埃氏筛法.cpp](/cpp/%E7%AE%97%E6%B3%95/%E6%95%B0%E8%AE%BA/%E6%9E%9A%E4%B8%BE_%E5%9F%83%E6%B0%8F%E7%AD%9B%E6%B3%95.cpp) | C++ | 29 | 0 | 8 | 37 |
+| [cpp/算法/数论/递归\_最大公约数(最小公倍数)\_（欧几里得算法）.cpp](/cpp/%E7%AE%97%E6%B3%95/%E6%95%B0%E8%AE%BA/%E9%80%92%E5%BD%92_%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0(%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E6%95%B0)_%EF%BC%88%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95%EF%BC%89.cpp) | C++ | 34 | 0 | 12 | 46 |
 | [cpp/算法/数论/递归\_最大公约数\_（扩展欧几里得算法）.cpp](/cpp/%E7%AE%97%E6%B3%95/%E6%95%B0%E8%AE%BA/%E9%80%92%E5%BD%92_%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0_%EF%BC%88%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95%EF%BC%89.cpp) | C++ | 19 | 0 | 7 | 26 |
-| [cpp/算法/数论/递归\_最大公约数\_（欧几里得算法）.cpp](/cpp/%E7%AE%97%E6%B3%95/%E6%95%B0%E8%AE%BA/%E9%80%92%E5%BD%92_%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0_%EF%BC%88%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95%EF%BC%89.cpp) | C++ | 30 | 0 | 11 | 41 |
 | [cpp/算法/查找与遍历/BFS\_传送迷宫.cpp](/cpp/%E7%AE%97%E6%B3%95/%E6%9F%A5%E6%89%BE%E4%B8%8E%E9%81%8D%E5%8E%86/BFS_%E4%BC%A0%E9%80%81%E8%BF%B7%E5%AE%AB.cpp) | C++ | 84 | 9 | 27 | 120 |
 | [cpp/算法/查找与遍历/BFS\_马的遍历.cpp](/cpp/%E7%AE%97%E6%B3%95/%E6%9F%A5%E6%89%BE%E4%B8%8E%E9%81%8D%E5%8E%86/BFS_%E9%A9%AC%E7%9A%84%E9%81%8D%E5%8E%86.cpp) | C++ | 41 | 2 | 17 | 60 |
 | [cpp/算法/查找与遍历/DFS\_选数.cpp](/cpp/%E7%AE%97%E6%B3%95/%E6%9F%A5%E6%89%BE%E4%B8%8E%E9%81%8D%E5%8E%86/DFS_%E9%80%89%E6%95%B0.cpp) | C++ | 38 | 0 | 11 | 49 |
@@ -414,4 +452,4 @@ Total : 402 files,  16239 codes, 264 comments, 4237 blanks, all 20740 lines
 | [cpp/算法/递归/递归枚举回溯\_枚举子集.cpp](/cpp/%E7%AE%97%E6%B3%95/%E9%80%92%E5%BD%92/%E9%80%92%E5%BD%92%E6%9E%9A%E4%B8%BE%E5%9B%9E%E6%BA%AF_%E6%9E%9A%E4%B8%BE%E5%AD%90%E9%9B%86.cpp) | C++ | 25 | 0 | 6 | 31 |
 | [cpp/算法/递归/递归枚举回溯\_组合型枚举.cpp](/cpp/%E7%AE%97%E6%B3%95/%E9%80%92%E5%BD%92/%E9%80%92%E5%BD%92%E6%9E%9A%E4%B8%BE%E5%9B%9E%E6%BA%AF_%E7%BB%84%E5%90%88%E5%9E%8B%E6%9E%9A%E4%B8%BE.cpp) | C++ | 25 | 0 | 8 | 33 |
 
-[Summary](results.md) / Details / [Diff Summary](diff.md) / [Diff Details](diff-details.md)
+[Summary](results.md) / [Details](details.md) / [Diff Summary](diff.md) / Diff Details
