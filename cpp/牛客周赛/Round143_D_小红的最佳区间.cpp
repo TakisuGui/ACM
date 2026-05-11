@@ -8,33 +8,30 @@ void solve()
 {
     int n,k; cin>>n>>k;
     
-    vector<int> starts, ends;
+    vector<pair<long long, int>> events;
     for(int i=0; i<n;i++)
     {
         int l,r; cin>>l>>r;
-        starts.push_back(l-k);
-        ends.push_back(r);
+        events.push_back({l-k,-1}); //-1 代表左端点排在,前面优先处理
+        events.push_back({r,1});
     }
 
-    sort(starts.begin(), starts.end());
-    sort(ends.begin(), ends.end());
+    sort(events.begin(),events.end());
 
     int ans=0;
     int cur=0;
-    int j=0; //// 指向ends的指针
-
-    for(int i=0; i<n;i++)
+    
+    for(auto &v : events)
     {
-        cur++;
-        
-        while(j<n && ends[j]<starts[i])
+        if(v.second==-1) cur++;
+        else
         {
+            ans=max(cur,ans);
             cur--;
-            j++;
         }
-        ans=max(ans,cur);
     }
-
+    ans=max(cur,ans);
+    
     cout<<ans<<endl;
 }
 
