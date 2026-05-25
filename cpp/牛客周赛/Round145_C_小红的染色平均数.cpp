@@ -8,12 +8,17 @@ const int N=2e5+10;
 void solve()
 {   
     int n; cin>>n;
-    string s; cin>>s;
-    unordered_map<char,int> mp;
-    for(char c : s) mp[c]++;
+    vector<int> a(n+1);
+    string color;
+    int sum=0,sumred=0,r=0;
 
-    int ans=s.size()*(s.size()+1)/2-mp[1]*(mp[1]+1)/2-mp[0]*(mp[0]+1)/2;
-    cout<<ans<<endl;
+    for(int i=0;i<n;i++) cin>>a[i],sum+=a[i];
+    cin>>color;
+    for(int i=0;i<n;i++) if(color[i]=='0') sumred+=a[i],r++;
+
+
+    if((r*sum%n)!=0) {cout<<-1<<endl; return;}
+    cout<<abs(sumred-r*sum/n)<<endl;
 }
 
 
@@ -30,5 +35,3 @@ signed main()
 
     return 0;
 }
-
-

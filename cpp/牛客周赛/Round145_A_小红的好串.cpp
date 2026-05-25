@@ -7,13 +7,11 @@ const int N=2e5+10;
 
 void solve()
 {   
-    int n; cin>>n;
     string s; cin>>s;
     unordered_map<char,int> mp;
     for(char c : s) mp[c]++;
 
-    int ans=s.size()*(s.size()+1)/2-mp[1]*(mp[1]+1)/2-mp[0]*(mp[0]+1)/2;
-    cout<<ans<<endl;
+    cout<<(mp.size()==2 ? "Yes" : "No")<<endl;
 }
 
 
@@ -30,5 +28,3 @@ signed main()
 
     return 0;
 }
-
-

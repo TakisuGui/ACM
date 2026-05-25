@@ -9,10 +9,22 @@ void solve()
 {   
     int n; cin>>n;
     string s; cin>>s;
-    unordered_map<char,int> mp;
-    for(char c : s) mp[c]++;
+    
+    int ans=n*(n+1)/2;
+    char cur=s[0]; int has=1;
+    for(int i=1;i<n;i++)
+    {
+        if(s[i]==cur) has++;
+        else
+        {
+            ans-=has*(has+1)/2;
+            has=1;
+            cur=s[i];
+        }
+    }
 
-    int ans=s.size()*(s.size()+1)/2-mp[1]*(mp[1]+1)/2-mp[0]*(mp[0]+1)/2;
+    ans-=has*(has+1)/2;
+
     cout<<ans<<endl;
 }
 
@@ -30,5 +42,3 @@ signed main()
 
     return 0;
 }
-
-

@@ -1,58 +1,38 @@
-#include<bits/stdc++.h>
+#include <iostream>
 using namespace std;
-typedef long long ll;
-#define endl "\n"
-const int N=1e6+10;
 
-vector<int> a;
-vector<bool> prime(N+1,true);
+// 逻辑运算函数
+bool NOT(bool x) { return !x; }
+bool AND(bool x, bool y) { return x && y; }
+bool OR(bool x, bool y) { return x || y; }
+bool IMPLY(bool x, bool y) { return !x || y; }
+bool EQUIV(bool x, bool y) { return x == y; }
 
-void ini()
-{
-    prime[1]=false,prime[2]=true;
-
-    for(ll i=2;i<=N;i++)
-    {
-        if(prime[i])
-        {
-            for(ll j=i*i;j<=N;j+=i) prime[j]=false;
-        }
-    }
-
-    for(int i=2;i<=N;i++)  if(prime[i]) a.push_back(i);
-}
-
-void solve()
-{
-
-    ll n; cin>>n;
-
-    if(n==1)
-    {
-        cout<<"No"<<endl;
-        return;
-    }
-
-    bool pass=true;
-    for(auto v:a)
-    {
-        if(v*v>n) break;
-        
-        if(n%v==0)
-        {
-            pass=false;
-            break;
-        }
-    }
-
-    cout<<(pass ? "Yes" : "No")<<endl;
-}
-
-
-int main()
-{
-    ini();
-    solve();
-
+int main() {
+    int p, q;
+    
+    cout << "========== 逻辑联结词真值计算器 ==========" << endl;
+    cout << "请输入命题P的真值(0=假,1=真):";
+    cin >> p;
+    cout << "请输入命题Q的真值(0=假,1=真):";
+    cin >> q;
+    
+    // 转换为布尔值
+    bool P = (p == 1);
+    bool Q = (q == 1);
+    
+    cout << "\n========== 计算结果 ==========" << endl;
+    cout << "P = " << p << ", Q = " << q << "\n" << endl;
+    cout << "┌─────────────┬──────────┬─────┐" << endl;
+    cout << "│ 联结词      │ 表达式   │ 结果│" << endl;
+    cout << "├─────────────┼──────────┼─────┤" << endl;
+    cout << "│ 否定        │ ~P       │  " << NOT(P) << "  │" << endl;
+    cout << "│ 否定        │ ~Q       │  " << NOT(Q) << "  │" << endl;
+    cout << "│ 合取        │ P ∧ Q    │  " << AND(P, Q) << "  │" << endl;
+    cout << "│ 析取        │ P ∨ Q    │  " << OR(P, Q) << "  │" << endl;
+    cout << "│ 蕴含        │ P → Q    │  " << IMPLY(P, Q) << "  │" << endl;
+    cout << "│ 等价        │ P ? Q    │  " << EQUIV(P, Q) << "  │" << endl;
+    cout << "└─────────────┴──────────┴─────┘" << endl;
+    
     return 0;
 }

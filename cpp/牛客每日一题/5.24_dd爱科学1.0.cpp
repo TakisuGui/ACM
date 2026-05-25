@@ -6,14 +6,19 @@ typedef long long ll;
 const int N=2e5+10;
 
 void solve()
-{   
-    int n; cin>>n;
-    string s; cin>>s;
-    unordered_map<char,int> mp;
-    for(char c : s) mp[c]++;
+{
+    int n; string s; cin>>n>>s;
+    
+    string ans="";
 
-    int ans=s.size()*(s.size()+1)/2-mp[1]*(mp[1]+1)/2-mp[0]*(mp[0]+1)/2;
-    cout<<ans<<endl;
+    for(char c : s)
+    {
+        auto it=upper_bound(ans.begin(),ans.end(),c);
+        if(it==ans.end()) ans.push_back(c);
+        else *it=c;
+    }
+
+    cout<<n-ans.size()<<endl;
 }
 
 
@@ -30,5 +35,3 @@ signed main()
 
     return 0;
 }
-
-

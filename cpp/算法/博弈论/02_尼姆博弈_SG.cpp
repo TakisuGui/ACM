@@ -27,7 +27,7 @@ void solve()
 
     for(int i=1;i<=mx;i++) // 直接取最大的数量 这样一定可以把更小的堆数量的 sg 算出来
     {
-        for(int j=0;j<i;j++) appear[i]=true; //即可以转移的前驱
+        for(int j=0;j<i;j++) appear[sg[j]]=true; //即可以转移的前驱
 
         for(int k=0;k<=mx;k++)
         {
