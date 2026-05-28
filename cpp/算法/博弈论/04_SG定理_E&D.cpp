@@ -56,11 +56,31 @@ void test() {
     }
 }
 
+int lowZero(int status) {
+    int ans = 0;
+    while (status > 0) {
+        if ((status & 1) == 0) {
+            break;
+        }
+        status >>= 1;
+        ans++;
+    }
+    return ans;
+}
 
 void solve()
 {
-    test();
+    int n; cin>>n;
+    int sgSum=0;
+    for (int j=1; j<=n; j+=2) 
+    {
+        int a,b; cin>>a>>b;
+        sgSum^=lowZero((a-1) | (b-1));
+    }
+
+    cout<< (sgSum==0 ? "NO" : "YES")<<endl;
 }
+
 
 
 signed main()
@@ -68,7 +88,7 @@ signed main()
     ios::sync_with_stdio(false);
     cin.tie(0);
 
-    int t; t=1;
+    int t; cin>>t;
     while(t--)
     {
         solve();
