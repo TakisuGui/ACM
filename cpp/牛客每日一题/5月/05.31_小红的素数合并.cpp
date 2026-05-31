@@ -19,15 +19,14 @@ void solve()
     {
         for(int i=0;i<n/2;i++) b.push_back(a[i]*a[n-i-1]);
         sort(b.begin(),b.end());
-        cout<<b[b.end()-b.begin()]-b[0]<<endl;
+        cout<<b[b.end()-b.begin()-1]-b[0]<<endl;
     }
     else 
     {
-        int i;
-        for(i=0;i<n/2;i++) b.push_back(a[i]*a[n-i-1]);
-        b.push_back(a[i]);
+        b.push_back(a[n-1]);
+        for(int i=0;i<n-1;i++) b.push_back(a[i]*a[n-i-2]);
         sort(b.begin(),b.end());
-        cout<<b[b.end()-b.begin()]-b[0]<<endl;
+        cout<<b[b.end()-b.begin()-1]-b[0]<<endl;
     }
 }
 
