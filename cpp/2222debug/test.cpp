@@ -1,47 +1,29 @@
-#include<bits/stdc++.h>
+#include<iostream> 
 using namespace std;
-typedef long long ll;
-#define endl "\n"
-#define int ll
-const int N=1e6+10;
-
-
-void solve()
+class Base
 {
-    int n; cin>>n;
-    vector<int> a(n); for(int i=0;i<n;i++) cin>>a[i];
+    int x;
 
-    sort(a.begin(),a.end());
-
-    vector<int> b;
-
-    if(n%2==0)
-    {
-        for(int i=0;i<n/2;i++) b.push_back(a[i]*a[n-i-1]);
-        sort(b.begin(),b.end());
-        cout<<b[b.end()-b.begin()]-b[0]<<endl;
-    }
-    else 
-    {
-        int i;
-        for(i=0;i<n/2;i++) b.push_back(a[i]*a[n-i-1]);
-        b.push_back(a[i]);
-        sort(b.begin(),b.end());
-        cout<<b[b.end()-b.begin()]-b[0]<<endl;
-    }
-}
-
-
-signed main()
+public:
+    void setX(int a) { x = a; }
+    int getX() { return x; }
+};
+class DemoA : virtual public Base
 {
-    ios::sync_with_stdio(false);
-    cin.tie(0);
-
-    int t; t=1;
-    while(t--)
-    {
-        solve();
-    }
-
+};
+class DemoB : virtual public Base
+{
+};
+class Derived : public DemoA, public DemoB
+{
+public:
+    int getX() { return DemoA::getX(); }
+};
+int main()
+{
+    Derived d;
+    d.DemoA::setX(6);
+    d.DemoB::setX(25);
+    cout << "x=" << d.getX() << endl;
     return 0;
 }
