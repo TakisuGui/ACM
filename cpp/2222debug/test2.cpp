@@ -5,79 +5,50 @@ typedef long long ll;
 #define int ll
 const int N=1e3+10;
 
-//打表找规律
-int dp[N][N];
-
-void ini()
+// 成员函数做友元
+class build2;
+class f11
 {
-    for(int i=0;i<N;i++) 
-		for(int j=0;j<N;j++) 
-			dp[i][j]=-1;
+public:
+    f11();
+
+    void vis2();
+
+    build2* building;
+};
+class build2
+{
+    friend void f11::vis2();
+public:
+    build2(); // 类內声明 类外实现
+
+    string m_room;
+private:
+    string m_bed;
+};
+build2::build2()
+{
+    m_bed="123";
+    m_room="456";
 }
-
-int sg(int a,int b)
+f11::f11()
 {
-    if(a==1&&b==1) return 0;
-    if(dp[a][b]!=-1) return dp[a][b];
-
-    vector<bool> appera(N+2,false);
-
-    if(a>1)
-    {
-        for(int i=1;i<=a-1;i++) appera[sg(i,a-i)]=true;
-    }
-    if(b>1)
-    {
-        for(int i=1;i<=b-1;i++) appera[sg(i,b-i)]=true;
-    }
-
-    int ans=0;
-    for(int k=0;k<=max(a,b);k++)
-    {
-        if(!appera[k]){ans=k; break;}
-    }
-
-    dp[a][b]=ans;
-    return ans;
+    building=new build2;
 }
-
-void test()
+void f11::vis2()
 {
-    ini();
-    int k=0;
-    for(int m=1;m<N;m++)
-    {
-        for(int n=m;n<N;n++) 
-        {
-            cout<<sg(m,n)<<" ";
-
-            if(k==9)
-            {
-                cout<<endl;
-                k=0;
-            }
-            else k++;
-        }
-    }
+    cout<<building->m_room<<" "<<building->m_bed<<endl;
 }
-
-
-void solve()
+void test12()
 {
-    test();
+    f11 p;
+    p.vis2();
 }
 
 
 signed main()
 {
-    ios::sync_with_stdio(false);
-    cin.tie(0);
-
-    int t; t=1;
-    while(t--)
-    {
-        solve();
-    }
+    test12();
 
     return 0;
 }
