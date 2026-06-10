@@ -1024,7 +1024,578 @@ void test27()
 }
 
 
+// 纯虚函数 和 抽象类
+// 可以把 虚函数 改成 纯虚函数 
+// virtual 返回值类型 函数类型 (参数列表) = 0;
+// 有了 纯虚函数的类 是 抽象类
+// 抽象类 无法实例化 对象  必须在子类中 重写父类的虚函数 才能实例化子类
+class f40
+{
+public :
+    virtual void func()=0;
+};
+class f41: public f40
+{
+public:
+    void func()
+    {
+        cout<<114514<<endl;
+    }
+};
+void test28()
+{
+    //f40 p;
+    f41 p2;
+    f40* p3=new f41;
+    p3->func();
+}
 
+
+
+// 虚析构 和 纯虚析构
+// 父类指针指向一个子类对象时 会出现 子类转父类指针
+// 最后在调用父类的析构函数时
+// 造成 只有父类部分被销毁了 但是子类特有的成员变量没有被释放
+class f42
+{
+public:
+    virtual void speak() = 0;
+
+    f42()
+    {
+        cout<<"父类构造函数调用"<<endl;
+    }
+
+    // virtual ~f42()
+    // {
+    //     cout<<"父类析构函数调用"<<endl;
+    // }
+
+    // 必须既要 声明 又要 实现
+    virtual ~f42() = 0; // 等于 0 的目的 是让父类变成抽象类 无法实例化对象
+};
+// 子类析构执行完后 会自动强制地 向上调用父类的析构函数
+// 所以必须 让父类虚构函数有内容
+f42::~f42()
+{
+    cout<<"父类纯析构函数调用"<<endl;
+}
+class f43: public f42
+{
+public: 
+    virtual void speak()
+    {
+        cout<<*name<<endl;
+    }
+
+    f43(string s): name(new string(s))
+    {
+        cout<<"子类构造函数调用"<<endl;
+    }
+
+    ~f43()
+    {
+        if(name!=NULL)
+        {
+            cout<<"子类析构函数调用"<<endl;
+            delete name;
+            name=NULL;
+        }
+    }
+
+    string* name;
+};
+void test29()
+{
+    f42* p1=new f43("Tom");
+    p1->speak();
+    delete p1;    // 堆区 必须手动删除 才会调用 delete
+    cout<<endl<<endl;
+
+    f43 p2("1919810"); // 本身这里 已经正常父子类 给构造 析构一次
+    p2.~f43(); // ~f43 被父类覆盖 所以 调用父类的析构函数
+}
+
+
+// 文件操作
+// 包含 文件流 头文件 <fstream>
+// 分为 文本文件 和 二进制文件
+// 文件流包括三个类 ofstream写_输出流  ifstream读_输入流  fstream读写
+
+// 文件打开方式
+// ios::open 读文件
+// ios::out  写文件
+// ios::ate  初始位置:文件尾
+// ios::app  追加方式写文件
+// ios::trunc   先删除(如果存在),再创建
+// ios::binary  二进制形式
+// 可以配合使用 利用 | 操作符
+// ios::binary | ios::out   用二进制形式写文件
+
+// 写文件
+void test30()
+{
+    // 创建输出流对象
+    ofstream p;
+
+    // 指定打开方式
+    p.open("text114514.exe",ios::out);
+
+    // 写入
+    p<<"114514"<<endl;
+
+    p.close();
+}
+
+// 读文件
+void test31()
+{
+    ifstream p;
+
+    p.open("text114514.exe",ios::in);
+
+    if(!p.is_open())
+    {
+        cout<<"文件打开失败"<<endl;
+        return;
+    }
+
+    string s1;
+    while(p>>s1)
+    {
+        cout<<s1<<endl;
+    }
+
+    char s2[1024]={0};
+    while(p.getline(s2,1024))
+    {
+        cout<<s2<<endl;
+    }
+
+    string s3;
+    while(getline(p,s3))
+    {
+        cout<<s3<<endl;;
+    }
+
+    char c;
+    while( (c=p.get()) != EOF ) // end of file
+    {
+        cout<<c;
+    }
+}
+
+// 二进制写文件
+class f44
+{
+public:
+    char name[64];
+    int m_age;
+};
+void test32()
+{
+    ofstream p;
+
+    p.open("f43.txt",ios::out | ios::binary);
+
+    f44 data={"1919810",18};
+    p.write( (const char*)& data , sizeof(f44) );
+
+    p.close();
+}
+// 二进制读文件
+void test33()
+{
+    ifstream p;
+
+    p.open("f43.txt",ios::in | ios::binary);
+
+    if(!p.is_open())
+    {
+        cout<<"文件打开失败"<<endl;
+        return;
+    }
+
+    f44 get_;
+    p.read( (char*)& get_,sizeof(f44) );
+
+    cout<<get_.name<<" "<<get_.m_age<<endl;
+
+    p.close();
+}
+
+
+
+// 函数模板
+template<typename T>
+void myswap(T& a,T&b)
+{
+    T temp=a;
+    a=b;
+    b=temp;
+}
+void test34()
+{
+    // 自动类型推导
+    int a=10,b=20;
+    myswap(a,b);
+    cout<<a<<" "<<b<<endl;
+
+    // 显示指定类型
+    myswap<int>(a,b);
+    cout<<a<<" "<<b<<endl;
+
+}
+
+// 函数模板注意事项
+// 自动类型推导 必须推导出一致的数据类型才可以使用
+// 模板必须先确定 T 的数据类型 才可以使用
+
+template<class T1>
+void func()
+{
+    cout<<114514<<endl;
+}
+void test35()
+{
+    int a=10; char c='a';
+    // myswap(a,c);  数据类型 不一致 无法使用
+
+    // func();   没有 先确定 T 的数据类型
+    func<int>();
+}
+
+ 
+ // 普通函数 和 函数模板区别
+ // 普通函数可发生隐式类型转换
+ // 函数模板 用自动类型推导 不能隐式类型转换
+ // 函数模板 用显示指定类型 可以隐式类型转换
+int myadd01(int a,int b){ return a+b;}
+template<class T2>
+int myadd02(T2 a,T2 b){ return a+b;}
+void test36()
+{
+    int a=10,b=20;
+    cout<<myadd01(a,b)<<endl;
+    char c='c';
+    cout<<myadd01(a,c)<<endl;
+
+    cout<<myadd01(a,b)<<endl;
+    // cout<<myadd01(a,c)<<endl;
+
+    cout<<myadd02<int>(a,c)<<endl;
+}
+
+
+// 普通函数 和 函数模板 调用规则
+// 如果二者 都可以实现 优先调用 普通函数
+// 可以通过 空模板参数列表 强制调用函数模板
+// 函数模板 也可以 重载
+// 如果函数模板 有更好的匹配 优先调用函数模板
+void myprint(int a,int b){ cout<<"调用普通函数"<<endl;}
+template<class T3>
+void myprint(T3 a,T3 b){ cout<<"调用函数模板"<<endl;}
+template<class T3>
+void myprint(T3 a,T3 b,T3 c){ cout<<"调用重载的函数模板"<<endl;} // 发生重载
+void test37()
+{
+    int a=10,b=20;
+    myprint(10,20);   //调用普通函数
+    // 普通函数不能为空 否则会报错
+
+    //通过空模板参数列表 强制调用函数模板
+    myprint<>(a,b);
+
+    //函数模板也可以重载
+    myprint<>(a,b,a);
+
+    //如果函数模板 有更好的匹配 优先调用函数模板
+    char c1='a',c2='b';
+    myprint(c1,c2);
+}
+
+
+// 模板局限性
+// 特定的数据类型 需要具体化方式实现
+class f45
+{
+public:
+    f45(string s,int a): name(s),m_age(a){};
+
+    string name;
+    int m_age;
+};
+template<class T4>
+bool mycompare(T4& a,T4& b)
+{
+    return(a==b ? true : false);
+}
+// 利用具体化 f45 版本实现 具体化会优先调用
+template<> bool mycompare(f45& p1,f45& p2)
+{
+    if(p1.m_age==p2.m_age&&p1.name==p2.name) return true;
+    else return false;
+}
+void test38()
+{
+    int a=10,b=20;
+    cout<<(mycompare(a,b) ? "true" : "false")<<endl;
+
+    f45 p1("TOM",10),p2("TOM",10);
+    cout<<(mycompare(p1,p2) ? "true" : "false")<<endl;
+}
+
+
+// 类模板
+template <class nametype,class agetype>
+class f46
+{
+public:
+    f46(nametype s,agetype a): name(s),m_age(a){};
+    void show()
+    {
+        cout<<this->m_age<<" "<<this->name<<endl;
+    }
+
+    nametype name;
+    agetype m_age;
+};
+void test39()
+{
+    f46<string,int> p1("Tom",18);
+    p1.show();
+}
+
+
+// 类模板 和 函数模板 区别
+// 类模板 没有 自动类型推导
+// 类模板 在模板参数列表中 可以有默认参数 
+template <class nametype,class agetype = int /*默认参数*/>
+class f47
+{
+public:
+    f47(nametype s,agetype a): name(s),m_age(a){};
+    void show()
+    {
+        cout<<this->m_age<<" "<<this->name<<endl;
+    }
+
+    nametype name;
+    agetype m_age;
+};
+void test40()
+{
+    // f47 p("sum",10);  类模板没有自动类型推导  cpp17 之后
+    f47<string ,int> p("sum",18);
+    p.show();
+    f47<string> p2("Tom",24);
+    p2.show();
+}
+
+
+// 类模板 成员函数创建时机
+// 普通类成员函数 编译时创建
+// 模板类成员函数 调用时创建
+class f48
+{
+public:
+    void show1()
+    {
+        cout<<114514<<endl;
+    }
+};
+class f49
+{
+public:
+    void show2()
+    {
+        cout<<1919810<<endl;
+    }
+};
+template <class T>
+class f50
+{
+public:
+    void func1()
+    {
+        a.show1();
+    }
+    void func2()
+    {
+        a.show2();
+    }
+    T a;    
+};
+void test41()
+{
+    // 一开始没调用 类模板 所以不明确 类中参数类型 故而可以通过编译(没有编译 f50)
+
+    f50<f48> p1;
+    p1.func1();
+    f50<f49> p2;
+    p2.func2();
+
+    // 指定类模板的参数类型后 调用模板类成员函数 如果 这个参数类型所属的类中 有该成员函数 就可以调用
+}
+
+
+// 类模板对象 做函数参数
+// 1.指定参数类型
+// 2.参数模板化
+// 3.整个类模板化
+template <class T1,class T2>
+class f51
+{
+public:
+    f51(T1 s,T2 a): name(s),m_age(a){};
+    void show()
+    {
+        cout<<this->m_age<<" "<<this->name<<endl;
+    }
+
+    T1 name;
+    T2 m_age;
+};
+// 指定参数传入类型
+void print0(f51<string,int>& p)
+{
+    p.show();
+}
+// 参数模板化
+template <class T1,class T2>
+void print1(f51<T1,T2>& p)
+{
+    p.show();
+    cout<<typeid(T1).name()<<"  "<<typeid(T2).name()<<endl; // 查看参数类型
+}
+template <class T>
+void print3(T& p)
+{
+    p.show();
+    cout<<typeid(T).name()<<endl;
+}
+void test42()
+{
+    f51<string,int> p1("Tom",18);
+    print0(p1);
+
+    f51<string,int> p2("Sum",24);
+    print1(p2);
+
+    f51<string,int> p3("homo",1919810);
+    print3(p3);
+}
+
+
+// 类模板 与 继承
+// 子类继承的父类 是类模板时 子类在声明的时候 必须指定父类中 T 的类型
+// 不指定 编译器不给子类分配内存  因为不知道类型 就不知道需要分配内存的大小
+// 如果想灵活指定父类中 T 的类型 子类也需要变成类模板
+template <class T>
+class f52
+{
+public:
+    T a;
+};
+class f53: public f52<int>
+{
+};
+template <class T1,class T2>
+class f54: public f52<T1>
+{
+public:
+    f54()
+    {
+        cout<<typeid(T1).name()<<endl;
+        cout<<typeid(T2).name()<<endl;
+    }
+    T2 b;
+};
+void test43()
+{
+    f53 p1;
+    f54<int,char> p2;
+}
+
+
+// 类模板成员函数 类外实现
+template <class T1,class T2>
+class f55
+{
+public:
+    f55(T1 s,T2 a);
+    void show();
+
+    T1 name;
+    T2 m_age;
+};
+// 构造函数类外实现
+template <class T1,class T2>
+f55<T1,T2>::f55(T1 s,T2 a): name(s),m_age(a){};
+// 成员函数类外实现
+template <class T1,class T2>
+void f55<T1,T2>:: show()
+{
+    cout<<this->m_age<<" "<<this->name<<endl;
+}
+void test44()
+{
+    f55<string,int> p("Tom",21);
+    p.show();
+}
+
+
+// 类模板 分文件编写
+// 类模板成员函数创建时机是调用阶段 所以可能导致 文件编写链接不到
+// 1. 直接包含 源文件
+// 2. 将 .h 和 .cpp 写到一起,然后把 .h 后缀改为 .hpp
+
+
+// 类模板 和 友元
+template <class T1,class T2>
+class f56
+{
+    // 全局函数类內实现
+    friend void show(f56<T1,T2>& p)
+    {
+        cout<<p.name<<" "<<p.m_age<<endl;
+    }
+
+public:
+    f56(T1 s,T2 a): name(s),m_age(a){};
+
+private:
+    T1 name;
+    T2 m_age;
+};
+// 全局函数类外实现
+template <class T1,class T2>
+class f57;
+template <class T1,class T2>
+void show2(f57<T1,T2>& p)
+{
+    cout<<p.name<<" "<<p.m_age<<endl;
+}
+template <class T1,class T2>
+class f57
+{
+    friend void show2<>(f57<T1,T2>& p);
+
+public:
+    f57(T1 s,T2 a): name(s),m_age(a){};
+
+private:
+    T1 name;
+    T2 m_age;
+};
+void test45()
+{
+    f56<string,int> p1("Tom",27);
+    show(p1);
+
+    f57<string,int> p2("Sum",114514);
+    show2(p2);
+}
 
 
 
@@ -1109,14 +1680,64 @@ int main()
     // test26();
     // cout<<endl;
 
-    test27();
-    cout<<endl;
+    // test27();
+    // cout<<endl;
 
     // test28();
     // cout<<endl;
 
     // test29();
     // cout<<endl;
+
+    // test30();
+    // cout<<endl;
+
+    // test31();
+    // cout<<endl;
+
+    // test32();
+    // cout<<endl;
+
+    // test33();
+    // cout<<endl;
+    
+    // test34();
+    // cout<<endl;
+
+    // test35();
+    // cout<<endl;
+
+    // test36();
+    // cout<<endl;
+
+    // test37();
+    // cout<<endl;
+
+    // test38();
+    // cout<<endl;
+
+    // test39();
+    // cout<<endl;
+
+    // test40();
+    // cout<<endl;
+
+    // test41();
+    // cout<<endl;
+
+    // test42();
+    // cout<<endl;
+
+    // test43();
+    // cout<<endl;
+
+    // test44();
+    // cout<<endl;
+
+    // test45();
+    // cout<<endl;
+
+    
 
     Base b[2]; // 这个数组中 每一个元素都是 Base 类型 所以每一个元素都调用一次构造函数
     return 0;
