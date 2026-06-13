@@ -88,7 +88,7 @@ void test01()
 
     dowork(p3);  //  传参的时候 会创造一个新对象 调用拷贝构造函数 然后把 p3 拷贝给新对象 并且把新对象传给函数
     cout<<"0000"<<endl;
-    dowork2(p3);  // 应用后 不再会创造一个新对象 所以不会调用 拷贝构造函数
+    dowork2(p3);  // 应用后 & 不再会创造一个新对象 所以不会调用 拷贝构造函数
     cout<<endl;
 
     //3. 值的方式返回 局部对象
@@ -752,12 +752,16 @@ class f23 :public f22
 {
     int m_d;
 };
+int f22::m_x=114514;
 void test20()
 {
     f23 p;
     f22 p1;
     cout<<sizeof p1<<endl;
     cout<<sizeof p<<endl;
+    cout<<f22::m_x<<endl;
+    f22::m_x=1919810;
+    cout<<f23::m_x<<endl;
     // 父类中非静态成员属性 都会被子类继承下去
 }
 
@@ -1605,8 +1609,8 @@ int main()
     // test(); 
     // cout<<endl;
 
-    // test01(); 
-    // cout<<endl;
+    test01(); 
+    cout<<endl;
 
     // test02();
     // cout<<endl;
@@ -1659,8 +1663,8 @@ int main()
     // test19();
     // cout<<endl;
 
-    // test20();
-    // cout<<endl;
+    test20();
+    cout<<endl;
 
     // test21();
     // cout<<endl;
