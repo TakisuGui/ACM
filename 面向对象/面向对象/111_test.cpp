@@ -1,19 +1,26 @@
 #include <iostream> 
 using namespace std; 
-class A { 
+class Base { 
+int x; 
 public: 
-    virtual void fun() { cout << "A::fun() "; } 
+void setX(int a){x=a;} 
+int getX(){return x;} 
 }; 
-class B: public A { 
+class DemoA :virtual public Base {}; 
+class DemoB :virtual public Base {}; 
+class Derived : public DemoA, public DemoB { 
 public: 
-    void fun() { cout << "B::fun() "; } 
+int getX(){ return DemoA::getX();} 
 }; 
-class C: public B { 
-    public: void fun() { cout << "C::fun() "; } 
-}; 
-int main() { 
-    B *bp = new C; 
-    bp->fun(); 
-    return 0; 
-}
+int main(){ 
+Derived d; 
+d.DemoA::setX(6); 
+d.DemoB::setX(25); 
+cout<<"x="<<d.getX()<<endl; 
+return 0; 
+} 
+
+
+
+
 

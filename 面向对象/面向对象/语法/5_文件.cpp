@@ -9,7 +9,7 @@ using namespace std;
 // 文件流包括三个类 ofstream写_输出流  ifstream读_输入流  fstream读写
 
 // 文件打开方式
-// ios::open 读文件
+// ios::in 读文件
 // ios::out  写文件
 // ios::ate  初始位置:文件尾
 // ios::app  追加方式写文件

@@ -272,3 +272,11 @@ void test25()
     cout<<p.m_a<<endl;
     //虚继承后共享一份数据
 }
+
+
+int main()
+{
+    test24();
+
+    return 0;
+}
