@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 typedef long long ll;
+#define int ll
 #define endl "\n"
 
 const int N=1e5+10;
@@ -44,7 +45,7 @@ void untie()
     cin.tie(0);
     cout.tie(0);
 }
-int count_1(ll x)
+ll count_1(ll x)
 {
     return __builtin_popcountll(x);
 }
@@ -76,7 +77,7 @@ void solve()
 
 }
 
-int main()
+signed main()
 {
     untie();
 
