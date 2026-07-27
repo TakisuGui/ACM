@@ -1,7 +1,6 @@
 {
     "C_Cpp.errorSquiggles": "enabled",
     "C_Cpp.enhancedColorization": "Enabled",
-    "c-cpp-compile-run.run-in-external-terminal": false,
-    "editor.inlineSuggest.enabled": false,
+    "c-cpp-compile-run.run-in-external-terminal": true,
     "java.debug.settings.onBuildFailureProceed": true
 }

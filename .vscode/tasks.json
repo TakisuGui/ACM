@@ -26,7 +26,7 @@
             "command": "powershell",
             "args": [
                 "-Command",
-                "cd '${fileDirname}'; javac -d . '${fileName}' -encoding utf-8; java '${fileBasenameNoExtension}'"
+                "cd '${fileDirname}'; javac '${fileName}' -encoding utf-8; java Main"
             ],
             "group": {
                 "kind": "test",
@@ -38,10 +38,7 @@
                 "focus": true,
                 "panel": "shared"
             },
-            "problemMatcher": [],
-            "runOptions": {
-                "runOn": "folderOpen"
-            }
+            "problemMatcher": []
         }
     ],
     "version": "2.0.0"
