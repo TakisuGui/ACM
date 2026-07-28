@@ -2,7 +2,6 @@
 using namespace std;
 typedef long long ll;
 #define endl "\n"
-#define int ll
 const int N=1e5+10;
 const int MOD=1e9+7;
 
@@ -39,22 +38,23 @@ void init()
 
 void solve()
 {
-    int n; cin>>n;
-    vector<int> a(n+1);
-    unordered_map<int,int> mp;
-    for(int i=1;i<=n;i++)
+    ll n; cin>>n;
+    vector<ll> a(n+1);
+    unordered_map<ll,ll> mp;
+    for(ll i=1;i<=n;i++)
     {
         cin>>a[i];
         mp[a[i]]++;
     }
 
-    int k=((n-1)*n*inv_f[2])%MOD;
-    for(auto [key,v] : mp)
+    ll k=((n-1)*n*inv_f[2])%MOD;
+    for(const auto &item : mp)
     {
+        ll v = item.second;
         if(v>=2) k=(k-((v*(v-1)%MOD)*inv_f[2])%MOD+MOD)%MOD;
     }
 
-    int ans=((k*f[n])%MOD*inv_f[2])%MOD;
+    ll ans=((k*f[n])%MOD*inv_f[2])%MOD;
     cout<<ans<<endl;
 }
 
@@ -65,7 +65,7 @@ signed main()
     cin.tie(0);
 
     init();
-    int t; t=1;
+    ll t; t=1;
     while(t--)
     {
         solve();
