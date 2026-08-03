@@ -67,7 +67,7 @@ void solve()
     int ans1=eor(Z,n2);
     int ans2=eor(E,n1);
 
-    cout<<ans1<<endl<<ans2<<endl<<114514;
+    cout<<ans1<<endl<<ans2<<endl;
 }
 
 
