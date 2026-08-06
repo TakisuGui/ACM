@@ -16,7 +16,7 @@ vector<vector<int>> tree4(N,vector<int>(N));
 int lowbit(int x)
 {
     return x&(-x);
-}
+} 
 
 void add(int x,int y,int v)
 {
