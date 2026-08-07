@@ -22,7 +22,7 @@ string get_abbr(vector<string>& words,int used)
 void solve()
 {
     int n; cin>>n;
-    cin.ignore(numeric_limits<streamsize>::max(),'\n');
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
     
     for(int i=0;i<n;i++)
     {

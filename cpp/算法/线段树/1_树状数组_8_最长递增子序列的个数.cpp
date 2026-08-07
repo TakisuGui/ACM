@@ -1,10 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-typedef long long ll;
-using ull=unsigned long long;
-#define endl "\n"
-#define int ll
-const int N=5e5+10;
+
 
 class Solution {
 public:
@@ -12,8 +8,8 @@ public:
     int n,cnt;
     vector<int> temp=vector<int>(2005);
     vector<int> has=vector<int>(2005);
-    vector<int> max_len=vector<int>(2005);
-    vector<int> max_len_cnt=vector<int>(2005);
+    vector<int> max_len=vector<int>(2005,0);
+    vector<int> max_len_cnt=vector<int>(2005,0);
 
     int lowbit(int x)
     {
@@ -55,7 +51,7 @@ public:
 
     int find_(int v)
     {
-        int l=1,r=cnt,ans=n+1;
+        int l=0,r=cnt-1,ans=cnt;
         while(l<=r)
         {
             int mid=(l+r)/2;
@@ -73,20 +69,27 @@ public:
 
     int findNumberOfLIS(vector<int>& nums) 
     {
+        n=nums.size();
         temp=nums;
 
-        sort(temp.begin()+1,temp.begin()+n+1);
-        has[1]=temp[1];
+        sort(temp.begin(),temp.begin()+n);
+        has[0]=temp[0];
         cnt=1;
 
-        for(int i=2;i<=n;i++)
+        for(int i=1;i<n;i++)
         {
-            if(temp[i]!=temp[i-1]) has[++cnt]=temp[i];
+            if(temp[i]!=temp[i-1]) has[cnt++]=temp[i];
         }
 
         int ans=0;
-        for(int i=1;i<=n;i++) nums[i]=find_(nums[i]); 
+        for(int i=0;i<n;i++) nums[i]=find_(nums[i])+1; 
         
-        
+        for(auto& num : nums)
+        {
+            query(num-1);
+            add(num,maxLen+1,max(maxLenCnt,1));
+        }
+        query(cnt);
+        return maxLenCnt;
     }
 };
