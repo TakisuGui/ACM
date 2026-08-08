@@ -11,7 +11,7 @@ ll black;
 
 void f(int i,int parent,int height,vector<vector<int>>& edges)
 {
-    if(height%2==1) black++;
+    if(height%2==0) black++;
     for(auto& v : edges[i])
     {
         if(v==parent) continue;
