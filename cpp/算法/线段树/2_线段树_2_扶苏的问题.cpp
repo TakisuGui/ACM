@@ -4,7 +4,7 @@ typedef long long ll;
 using ull=unsigned long long;
 #define endl "\n"
 #define int ll
-const int N=1e5+10;
+const int N=1e6+10;
 const int MOD=1e7+7;
 const int INF=1e18;
 
@@ -28,9 +28,9 @@ void lazy_add(int i,int v)
 
 void lazy_update(int i,int v)
 {
-    max_[i]+=v;
+    max_[i]=v;
     add[i]=0;
-    change[i]+=v;
+    change[i]=v;
     update[i]=true;
 }
 
@@ -120,12 +120,12 @@ void solve()
     while(m--)
     {
         int op; cin>>op;
-        if(op==1)
+        if(op==2)
         {
             int x,y,k; cin>>x>>y>>k;
             add_(x,y,k,1,n,1);
         }
-        else if(op==2)
+        else if(op==1)
         {
             int l,r,x; cin>>l>>r>>x;
             update_(l,r,x,1,n,1);
