@@ -18,7 +18,7 @@ public:
                 // 把这些前驱出现过的值标记
             }
 
-            for(int k=1;k<=m;k++)
+            for(int k=0;k<=m;k++)
             {
                 if(!appear[k]) {sg[i]=k; break;}
             }
