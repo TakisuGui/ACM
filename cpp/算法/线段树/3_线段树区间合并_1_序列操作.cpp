@@ -172,7 +172,8 @@ void solve()
 
     while(m--)
     {
-        int op,x,y; cin>>op>>x>>y; x++; y++;
+        int op,x,y; cin>>op>>x>>y; 
+        x++; y++;
 
         if(op==0) update_(x,y,0,1,n,1);
         else if(op==1) update_(x,y,1,1,n,1);

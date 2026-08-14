@@ -11,34 +11,24 @@ const int MOD=1e7+7;
 void solve()
 {
     int n; cin>>n;
+    vector<vector<int>> dp(n+1,vector<int>(n+1,N));
     vector<int> a(n+1);
-    for(int i=1;i<=n;i++) cin>>a[i];
-
-    sort(a.begin()+1,a.begin()+1+n);
-   
-    vector<int> cnt(n+1,0);
-    for(int i=1;i<=n;i++) cnt[a[i]]++;
-
-    priority_queue<pair<int,int>, vector<pair<int,int>>, greater<pair<int,int>>> q;
-
-    for(int i=1;i<=n;i++) 
+    for(int i=1;i<=n;i++)
     {
-        if(cnt[i]>0) q.push({cnt[i],i});
+        int x; cin>>x;
+        a[x]++;
     }
-    
-    int ans=0;
-    int lastAlice=-1;
-    
-    while(!q.empty())
-    {
-        auto [freq,v]=q.top(); q.pop();
 
-        if(v>lastAlice)
-        {
-            ans++;
-            lastAlice=v;
-        }
+    dp[0][0]=0;
+
+    for(int i=1;i<=n;i++)
+    {
+        for(int j=a[i];j<=n;j++) dp[i][j-a[i]]=min(dp[i][j-a[i]],dp[i-1][j]);
+
+        if(a[i])
+        for(int j=0;j<n;j++) dp[i][j+1]=min(dp[i][j+1],dp[i-1][j]+1);
     }
+    cout<<*min_element(dp[n].begin(),dp[n].end())<<endl;
 }
 
 
