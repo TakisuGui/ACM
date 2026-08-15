@@ -10,10 +10,20 @@ const int MOD=1e7+7;
 
 void solve()
 {
-    int a,b; cin>>a>>b;
+    int n; cin>>n;
+    map<string,int> mp;
 
-    if(a+b==9||a-b==9||a*b==9||(a%b==0&&a/b==9)) cout<<"Nine"<<endl;
-    else cout<<"Nein"<<endl;
+    for(int i=1;i<=n;i++)
+    {
+        string s; cin>>s;
+        for(char &c : s) c=tolower(c);
+        
+        mp[s]++;
+    }
+
+    int max_=-1;
+    for(auto& [key,v] : mp) max_=max(max_,v);
+    cout<<max_<<endl;
 }
 
 
