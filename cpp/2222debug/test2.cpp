@@ -1,77 +1,99 @@
-#include<bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
 using namespace std;
-typedef long long ll;
-const int N=5e5+10;
-#define endl "\n"
 
-vector<int> edges[N];
-vector<int> fa(N);
-vector<pair<int,int>> has[N];
-vector<bool> vis(N,false);
-vector<int> ans(N);
-int n,m,s;
+int main() {
+    // 优化输入输出速度
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
 
-void ini(int n) {for(int i=1;i<=n+1;i++) fa[i]=i;};
+    int N;
+    long long M;
+    if (!(cin >> N >> M)) return 0;
 
-int find_(int i)
-{
-    if(i!=fa[i]) fa[i]=find_(fa[i]);
+    vector<long long> A(N), B(N);
+    for (int i = 0; i < N; ++i) cin >> A[i];
+    for (int i = 0; i < N; ++i) cin >> B[i];
 
-    return fa[i];
-}
-
-
-void tarjan(int u,int f)
-{
-    vis[u]=true;
-
-    for(auto& v : edges[u])
-    {
-        if(v==f) continue;
-        tarjan(v,u);
-        fa[v]=u;
+    // 1. 计算 Ayu 能解出几道题，以及拿到每个气球的具体时间
+    int K = 0;
+    long long time_ayu = 0;
+    vector<long long> T; // 记录 Ayu 拿到气球的时间点
+    for (int i = 0; i < N; ++i) {
+        time_ayu += A[i];
+        if (time_ayu <= M) {
+            K++;
+            T.push_back(time_ayu);
+        } else {
+            break;
+        }
     }
 
-    for(auto& [v,id] : has[u])
-    {
-        if(vis[v]) ans[id]=find_(v);
-    }
-}
-
-
-void solve()
-{
-    cin>>n>>m>>s;
-    ini(n);
-    for(int i=1;i<n;i++)
-    {
-        int u,v; cin>>u>>v;
-        edges[u].push_back(v);
-        edges[v].push_back(u);
+    // 如果 Ayu 一题都解不出，必败
+    if (K == 0) {
+        cout << -1 << "\n";
+        return 0;
     }
 
-    for(int i=1;i<=m;i++)
-    {
-        int x,y; cin>>x>>y;
-        has[x].push_back({y,i});
-        has[y].push_back({x,i});
+    // 2. 标记 Budi 的前 K 个任务中，哪些是“后缀最大值”
+    vector<bool> is_suf_max(K, false);
+    long long cur_max = -1;
+    for (int j = K - 1; j >= 0; --j) {
+        if (B[j] >= cur_max) {
+            is_suf_max[j] = true;
+            cur_max = B[j];
+        }
     }
 
-    tarjan(s,0);
+    // 3. 模拟 Budi 的做题过程
+    int ayu_idx = 0; // Ayu 当前可用的下一个气球索引
+    long long budi_time = 0; // Budi 当前消耗的总时间
+    vector<long long> pops; // 记录扎气球的时间
 
-    for(int i=1;i<=m;i++) cout<<ans[i]<<endl;
-}
+    for (int j = 0; j < K; ++j) {
+        long long t_finish = budi_time + B[j];
+        
+        // 如果 Budi 即使没有气球干扰，完成这题也已经超时了，Ayu 直接赢
+        if (t_finish > M) {
+            break;
+        }
 
+        // 如果这是一个“后缀最大值”任务，疯狂砸手里可用的气球
+        if (is_suf_max[j]) {
+            // 条件：Ayu 还有气球，且下一个气球的获取时间 <= Budi 原本将要完成这题的时间
+            while (ayu_idx < K && T[ayu_idx] <= budi_time + B[j]) {
+                long long pop_time = budi_time + B[j];
+                pops.push_back(pop_time);
+                budi_time += B[j]; // Budi 的进度被重置，时间硬生生增加了 B[j]
+                ayu_idx++;
 
-signed main()
-{
-    ios::sync_with_stdio(false);
-    cin.tie(0);
+                // 如果砸完这次气球后，Budi 下一次尝试完成的时间已经超过了 M，Ayu 直接赢
+                if (budi_time + B[j] > M) {
+                    goto WIN; // 跳出多重循环的快捷方式
+                }
+            }
+        }
+        
+        // 不管有没有被砸气球，最终 Budi 做完了这题（或者准备做下一题），基础时间推进
+        budi_time += B[j];
+    }
 
-    ll t; t=1;
-    while(t--)
-    {
-        solve();
+    // 如果顺利走出了上面的循环，说明 Budi 在 M 分钟内完成了前 K 题，Ayu 没能阻止他
+    cout << -1 << "\n";
+    return 0;
+
+WIN:
+    // Ayu 获胜，输出需要扎破的气球数和扎破的时间列表
+    cout << pops.size() << "\n";
+    if (!pops.empty()) {
+        for (int i = 0; i < pops.size(); ++i) {
+            cout << pops[i] << (i == pops.size() - 1 ? "" : " ");
+        }
+        cout << "\n";
+    } else {
+        cout << "\n";
     }
 
     return 0;
