@@ -37,7 +37,7 @@ void print(int i)
         return;
     }
 
-    sort(players.begin(),players.end(),);
+    sort(players.begin(),players.end());
 
 
     for(int j = 0; j < players.size(); j++) {
