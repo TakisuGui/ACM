@@ -1,92 +1,63 @@
-#include<bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <numeric>
+#include <algorithm>
+
 using namespace std;
-typedef long long ll;
-using ull=unsigned long long;
-#define endl "\n"
-#define int ll
-const int N=150001;
-const int MOD=998244353;
 
-vector<vector<int>> tree(N,vector<int>(26,0));
-vector<int> pass(N,0);
-vector<int> end_(N,0);
-int cnt=1;
 
-void insert_(string s)
-{
-    int cur=1;
-    pass[cur]++;
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
 
-    for(int i=0;i<s.size();i++)
-    {
-        int j=s[i]-'a';
-        if(tree[cur][j]==0)
-        {
-            tree[cur][j]=++cnt;
+    int n, k;
+    if (!(cin >> n >> k)) return 0;
+
+    int m = n - k;
+
+    if (m <= 1) {
+        for (int i = 1; i <= k; ++i) {
+            cout << i << (i == k ? "" : " ");
         }
-        cur=tree[cur][j];
-        pass[cur]++;
+        cout << "\n";
+        return 0;
     }
-    end_[cur]++;
-}
 
-int search_(int n,string s) // 前缀0 完整1
-{
-    int cur=1;
-    for(int i=0;i<s.size();i++)
-    {
-        int j=s[i]-'a';
-        if(tree[cur][j]==0) return 0;
-
-        cur=tree[cur][j];
-    }
-    if(n==0)return pass[cur];
-    else return end_[cur];
-}
-
-void delere_(string s)
-{
-    if(search_(1,s)>0)
-    {
-        int cur=1; pass[cur]--;
-        for(int i=0;i<s.size();i++)
-        {
-            int j=s[i]-'a';
-            if(--pass[tree[cur][j]]==0)
-            {
-                tree[cur][j]=0;
-                return;
-            }
-            cur=tree[cur][j];
+    vector<int> keep; 
+    int best_step = -1;
+    for (int step = 1; step < n; ++step) {
+        if (__gcd(step, n) == 1) {
+            best_step = step;
+            break;
         }
-        end_[cur]--;
     }
-}
 
-void solve()
-{
-    int n; cin>>n;
-    while(n--)
-    {
-        int op; string s; cin>>op>>s;
-        if(op==1) insert_(s);
-        else if(op==2) delere_(s);
-        else if(op==3) cout<<(search_(1,s)>0 ? "YES" : "NO")<<endl;
-        else cout<<search_(0,s)<<endl;
+    if (best_step != -1 && (m - 1) * best_step < n) {
+
+        for (int i = 0; i < m; ++i) {
+            keep.push_back(1 + i * best_step);
+        }
+    } else {
+        
+        for (int i = 1; i <= m; ++i) {
+            keep.push_back(i);
+        }
     }
-}
 
-
-signed main()
-{
-    ios::sync_with_stdio(false);
-    cin.tie(0);
-
-    ll t; t=1;
-    while(t--)
-    {
-        solve();
+    vector<bool> is_kept(n + 1, false);
+    for (int x : keep) {
+        is_kept[x] = true;
     }
+
+    bool first = true;
+    for (int i = 1; i <= n; ++i) {
+        if (!is_kept[i]) {
+            if (!first) cout << " ";
+            cout << i;
+            first = false;
+        }
+    }
+    cout << "\n";
 
     return 0;
 }
