@@ -2,6 +2,13 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "basic_grammar",
+            "request": "launch",
+            "mainClass": "Main.basic_grammar",
+            "projectName": "cpp_759ce3eb"
+        },
+        {
             "type": "cppdbg",
             "name": "C++: Run in Integrated Terminal",
             "request": "launch",
@@ -20,29 +27,7 @@
             "type": "java",
             "name": "_000",
             "request": "launch",
-            "mainClass": "java.Main._000",
-            "projectName": "cpp_759ce3eb"
-        },
-        {
-            "type": "java",
-            "name": "_000",
-            "request": "launch",
-            "mainClass": "_000",
-            "projectName": "cpp_759ce3eb"
-        },
-        {
-            "type": "java",
-            "name": "Java: Main",
-            "request": "launch",
-            "mainClass": "Main",
-            "projectName": "cpp_759ce3eb"
-        }
-        ,
-        {
-            "type": "java",
-            "name": "Java: Main",
-            "request": "launch",
-            "mainClass": "Main",
+            "mainClass": "Main._000",
             "projectName": "cpp_759ce3eb"
         }
     ]

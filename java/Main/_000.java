@@ -1,3 +1,5 @@
+package Main;
+
 public class _000 
 {
     public static void main(String[] args) 

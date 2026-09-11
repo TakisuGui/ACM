@@ -10,25 +10,23 @@ const int MOD=998244353;
 
 void solve()
 {
-    int n; cin>>n;
-    vector<int> a(n);
-    int cnt_0=0;
-    for(int i=0;i<n;i++)
+    int x,y,k; cin>>x>>y>>k;
+    int d=y-x;
+    int total=0;
+    int has_months=0;
+
+    while(has_months<k&&(x+has_months)<=d)
     {
-        cin>>a[i];
-        if(a[i]==0) cnt_0++;
+        total+=d%(x+has_months);
+        has_months++;
     }
 
-    if(cnt_0<2)
+    if(has_months<k)
     {
-        cout<<-1<<endl;
-        return;
+        ll remain_month=k-has_months;
+        total+=remain_month*d;
     }
-
-    int ans=0;
-    if(a[0]==1) ans++;
-    if(a[n-1]==1) ans++;
-    cout<<ans<<endl;
+    cout<<total<<endl;
 }
 
 

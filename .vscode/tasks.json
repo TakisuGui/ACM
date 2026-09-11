@@ -26,7 +26,7 @@
             "command": "powershell",
             "args": [
                 "-Command",
-                "cd '${fileDirname}'; javac '${fileName}' -encoding utf-8; java '${fileBasenameNoExtension}'"
+                "cd '${fileDirname}'; javac '${fileName}' -encoding utf-8; if ($LASTEXITCODE -eq 0) { $package = (Get-Content '${fileName}' | Select-String '^package\\s+([^;]+);').Matches.Groups[1].Value; if ($package) { cd ..; java \"$package.${fileBasenameNoExtension}\" } else { java '${fileBasenameNoExtension}' } }"
             ],
             "group": {
                 "kind": "test",
