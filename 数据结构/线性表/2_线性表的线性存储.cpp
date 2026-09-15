@@ -1,20 +1,7 @@
 #include<bits/stdc++.h>
+#include "1_List.h" 
 using namespace std;
 const int N=1e3+10;
-
-
-template<class T>
-class List
-{
-public:
-    virtual bool isempty()=0;
-    virtual T getelem(int i)=0;
-    virtual int locateelem(T e)=0;
-    virtual int Length()=0;
-    virtual Status Insert(int i,T e)=0;
-    virtual bool Delete(int i,T& e)=0;
-    virtual Status Push_back (T e)=0;
-};
 
 
 template<class T>
@@ -34,11 +21,11 @@ public:
     int Length();
     bool Insert(int i,T e);
     bool Delete(int i,T& e);
-    void Union(Sqlist<T>& lb)
-    Status Push_back (T e);
+    void Union(Sqlist<T>& lb);
+    bool Push_back(T e);
     Status Reverse();
 
-    virtual void Inputlist();
+    void Inputlist();
     void Outputlist();
 };
 
@@ -141,4 +128,85 @@ void Merge(Sqlist<T> la,Sqlist<T> lb,Sqlist<T>& lc)
         lc.Insert(++k,bj);
         j++;
     }
+}
+
+
+// 6. 空
+template<class T>
+bool Sqlist<T>:: isempty()
+{
+    return length==0;
+}
+
+
+// 7. 获取指定位置元素
+template<class T>
+T Sqlist<T>:: getelem(int i)
+{
+    return elem[i-1];
+}
+
+
+// 8. 获取指定值的下标
+template<class T>
+int Sqlist<T>:: locateelem(T e)
+{
+    int i;
+    for(i=length;i>0;i--)
+    {
+        if(elem[i-1]==e) break;
+    }
+    return i;
+}
+
+
+// 9. 长度
+template<class T>
+int Sqlist<T>:: Length(){
+    return length;
+}
+
+
+// 10. 尾插
+template<class T>
+bool Sqlist<T>:: Push_back(T e)
+{
+    T *p;
+    if(length>=listsize)
+    {
+        T* newbase=new T[ListSize+ListIncrease];
+        if(!newbase) return false;
+        p=elem;
+        elem=newbase;
+        for(int i=0;i<length;i++) elem[i]=p[i];
+        listsize+=ListIncrease;
+    }
+
+    elem[length]=e;
+    length++;
+    return OK;
+}
+
+
+// 11. 输入
+template<class T>
+void Sqlist<T>:: Inputlist()
+{
+    int i,n; T key;
+    cin>>n;
+    for(i = 0;i<n;i++)
+    {
+        cin>>key;
+        Insert(key);
+    }
+}
+
+
+// 12. 输出
+template<class T>
+void Sqlist<T>:: Outputlist()
+{
+    int i;
+    for (i=0;i<length;i++)  cout<<elem[i]<<"->";
+    cout<<endl;
 }

@@ -1,20 +1,8 @@
 #include<bits/stdc++.h>
+#include "1_List.h" 
 using namespace std;
 const int N=1e3+10;
 
-
-template<class T>
-class List
-{
-public:
-    virtual bool isempty()=0;
-    virtual T getelem(int i)=0;
-    virtual int locateelem(T e)=0;
-    virtual int Length()=0;
-    virtual Status Insert(int i,T e)=0;
-    virtual bool Delete(int i,T& e)=0;
-    virtual Status Push(T e)=0;
-};
 
 template<class T>
 class Sqlist: public List<T>

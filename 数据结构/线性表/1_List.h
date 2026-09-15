@@ -1,6 +1,11 @@
+#ifndef LISTCPP_LIST_H
+#define LISTCPP_LIST_H
+
 #include<bits/stdc++.h>
 using namespace std;
-
+typedef int Status;
+#define OK 1
+#define ERROR 0
 
 template<class T>
 class List
@@ -15,3 +20,4 @@ public:
     virtual Status Push_back (T e)=0;
 };
 
+#endif 

@@ -1,19 +1,7 @@
 #include<bits/stdc++.h>
+#include "1_List.h" 
 using namespace std;
 
-
-template<class T>
-class List
-{
-public:
-    virtual bool isempty()=0;
-    virtual T getelem(int i)=0;
-    virtual int locateelem(T e)=0;
-    virtual int Length()=0;
-    virtual Status Insert(int i,T e)=0;
-    virtual Status Delete(int i,T& e)=0;
-    virtual Status Push_back (T e)=0;
-};
 
 template<class T>
 class Node
@@ -43,6 +31,7 @@ public:
     virtual void Outputlist();
     bool Inputlist();
     bool Inputlist_R();
+    bool Reverse();
     void Union(linkedlist<T>& lb);
 };
 
@@ -164,6 +153,7 @@ bool linkedlist<T>:: Inputlist()
     return true;
 }
 
+
 // 6. 合并
 template<class T>
 void linkedlist<T>:: Union(linkedlist<T>& lb)
@@ -176,4 +166,68 @@ void linkedlist<T>:: Union(linkedlist<T>& lb)
         e=lb.getelem(i);
         if(this->locateelem(e)==0) this->Insert(e);
     }
+}
+
+
+// 7. 定位
+template<class T>
+int linkedlist<T>:: locateelem(T key)
+{
+    Node<T> *p; int i=1;
+    p=head->next;
+    while(p&&!(p->data==key))
+    {
+        p=p->next; i++;
+    }
+    if (!p) return -1;
+    return i;
+}
+
+
+// 8. 反转
+template<class T>
+bool linkedlist<T>:: Reverse()
+{
+    Node<T> *p; Node<T>* q; Node<T> *r;
+    p=head->next;
+    if(p==NULL) return false;
+    q=p->next;
+    if(q==NULL) return false;
+    r=q->next;
+
+    while(r!=NULL)
+    {
+        (*q).next=p;
+        p=q;
+        q=r;
+        r=q->next;
+    }
+    (*q).next=p;
+    (*(head->next)).next=NULL;
+    head->next=q;
+    return true;
+}
+
+
+// 9. 长度
+template<class T>
+int linkedlist<T>:: Length()
+{
+    Node<T> *p;
+    int i=0;
+    p=head->next;
+    while(p)
+    {  
+        p=p->next; i++;
+    }
+    return i;
+}
+
+
+// 10. 空
+template<class T>
+bool linkedlist<T>:: isempty()
+{
+    if(head->next) return false;
+    else return true;
 }
