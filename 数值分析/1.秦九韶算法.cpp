@@ -3,13 +3,13 @@ using namespace std;
 
 void solve()
 {
-    cout<<"ÇëÊäÈë·Ç¸ºÕûÊý´ÎÊý"<<endl;
+    cout<<"è¯·è¾“å…¥éžè´Ÿæ•´æ•°æ¬¡æ•°"<<endl;
     int n; cin>>n;
     vector<long double> a(n+1);
-    cout<<"ÇëÓÉµÍ´Îµ½¸ß´ÎÊäÈëÏµÊý"<<endl;
+    cout<<"è¯·ç”±ä½Žæ¬¡åˆ°é«˜æ¬¡è¾“å…¥ç³»æ•°"<<endl;
     for(int i=0;i<=n;i++) cin>>a[i];
 
-    cout<<"ÇëÊäÈëÇóÖµµã x0"<<endl;
+    cout<<"è¯·è¾“å…¥æ±‚å€¼ç‚¹ x0"<<endl;
     long double x0; cin>>x0;
 
     long double ans=a[n];
